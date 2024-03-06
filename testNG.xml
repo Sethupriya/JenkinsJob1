@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="classes" thread-count="1">
+    <listeners>
+        <listener class-name="org.example.listeners.MyListeners"></listener>
+        <listener class-name="org.example.listeners.MethodInterceptor"></listener>
+    </listeners>
+    <test name="Test1 in chrome">
+        <classes>
+            <class name="org.example.testcases.Login"></class>
+           <!-- <class name="org.example.testcases.Logout"></class>-->
+        </classes>
+    </test>
+</suite>
