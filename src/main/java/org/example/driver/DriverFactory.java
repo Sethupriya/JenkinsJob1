@@ -40,9 +40,9 @@ public class DriverFactory {
                 capabilities.setCapability("--headless",true);
                 driver = new RemoteWebDriver(new URL(ConfigReader.getProperty(Configproperties.SELENIUMGRIDURL)), capabilities);
             } else {
-                //EdgeDriverService service =
-                        //new EdgeDriverService.Builder().withLoglevel(ChromiumDriverLogLevel.DEBUG).build();
-                driver = new EdgeDriver();
+                EdgeDriverService service =
+                        new EdgeDriverService.Builder().withLoglevel(ChromiumDriverLogLevel.DEBUG).build();
+                driver = new EdgeDriver(service);
             }
         }else if (browser.equalsIgnoreCase("FireFox")) {
 
