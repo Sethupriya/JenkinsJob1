@@ -4,7 +4,6 @@ import org.example.driver.DriverManager;
 import org.example.enums.LogType;
 import org.example.enums.WaitStrategy;
 import org.example.utils.ExplicitWaitFactory;
-import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,13 +17,13 @@ public class BasePage {
 
     static WebDriver driver;
 
-    public static void sendKeys(@org.jetbrains.annotations.NotNull WebElement webElement, String value,String message){
+    public static void sendKeys(WebElement webElement, String value,String message){
         webElement.sendKeys(value);
         //ExtentLogger.pass(message+" is entered",true);
         log(LogType.PASS,message+" is entered");
     }
 
-    public static void click(@NotNull WebElement webElement,String message){
+    public static void click(WebElement webElement,String message){
         webElement.click();
         //ExtentLogger.pass(message + " is clicked",true);
         log(LogType.PASS,message+" is clicked");
